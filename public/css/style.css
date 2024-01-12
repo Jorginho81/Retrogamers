@@ -1,0 +1,71 @@
+.head{
+    font-family: 'Paytone One', sans-serif;
+    font-size: 15px;
+}
+.carousel-inner{
+    width: 600px;
+    height: 400px;
+    display: block;
+    margin: auto;
+}
+.text-primary{
+    color:blue!important;
+}
+
+.bg-primary, .btn-primary{
+    background:blue!important;
+}
+
+.text-secondary{
+    color:yellow;
+}
+.bg-secondary, .btn-secondary{
+    background:yellow;
+}
+
+.imgHome{
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.text1{
+    color: black;
+}
+
+.text2{
+    color: black;
+}
+
+.text1:hover{
+    background-color: yellow;
+    border-radius: 10%;
+}
+
+.text2:hover{
+    background-color: orange;
+    color: white;
+    border-radius: 10%;
+    
+}
+.navbar-brand{
+    font-size: 35px;
+    font-family: 'Paytone One', sans-serif;
+    margin: auto;
+        
+}
+.container-fluid2{
+    margin: auto;
+}
+
+.footer{
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Paytone One', sans-serif;
+}
+.vignette_jeu{
+    background-color: orange;
+}
+.footer2{
+    background-color: yellow;
+}

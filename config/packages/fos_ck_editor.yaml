@@ -1,0 +1,18 @@
+fos_ck_editor:
+  configs:
+    my_config:
+      toolbar: "full"
+  toolbars:
+    items:
+      full.colors: ["TextColor", "BGColor"]
+      full.document: ["Source", "-", "Preview", "Print"]
+      toolbar:
+        [
+          ["Source"],
+          ["Bold", "Italic", "Underline", "Strike", "Subscript", "Superscript"],
+          ["TextColor", "BGColor"],
+          ["NumberedList", "BulletedList"],
+          ["Outdent", "Indent"],
+          ["Link", "Unlink"],
+          ["Image", "Smiley", "SpecialChar"],
+        ]

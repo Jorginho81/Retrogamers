@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} | Catalogue{% endblock %}
+
+{% block h1 %}Catalogue{% endblock %}
+
+{% block body %}
+
+
+    <div class="row justify-content-between">
+    
+        {% for produit in produits %}
+            <div class="vignette_jeu border border-dark rounded text-center col-md-3 p-3 m-3">
+                <h3>{{ produit.titre }}</h3>
+                <h4>{{ produit.prix }} €</h4>
+                <h5>{{ produit.categorie }}</h5> 
+
+                <li class="">
+                    <a class="nav-link text1" href="{{ path('produit_fiche', { 'id': produit.id }) }}">Voir plus</a>
+                </li>
+               
+            </div>
+        {% endfor %}
+
+    </div>
+
+
+{% endblock %}

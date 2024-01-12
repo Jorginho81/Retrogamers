@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}{{ parent() }} | Gestion des attributs{% endblock %}
+
+{% block h1 %}Gestion des attributs{% endblock %}
+
+{% block body %}
+
+    
+    
+    <a class= "btn btn-primary" href="{{ path('app_matiere_new') }}">Créer attribut</a>
+
+    <table class="table text-center mt-3">
+        <thead class="table-primary">
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for matiere in matieres %}
+            <tr>
+                <td>{{ matiere.id }}</td>
+                <td>{{ matiere.nom }}</td>
+                <td>
+                    <a class="btn btn-warning" href="{{ path('app_matiere_show', {'id': matiere.id}) }}">Fiche</a>
+                    <a class="btn btn-info" href="{{ path('app_matiere_edit', {'id': matiere.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucun résultat</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+
+{% endblock %}

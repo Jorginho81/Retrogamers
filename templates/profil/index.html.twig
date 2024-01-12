@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Profil{% endblock %}
+
+{% block h1 %}Mon Profil{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Informations Utilisateur</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Email:</strong> {{ app.user.email }}</li>
+                            <li class="list-group-item"><strong>Nom:</strong> {{ app.user.nom ?? 'Non défini' }}</li>
+                            <li class="list-group-item"><strong>Prénom:</strong> {{ app.user.prenom ?? 'Non défini' }}</li>
+                            <li class="list-group-item"><strong>Adresse:</strong> {{ app.user.adresse ?? 'Non définie' }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">                
+				<button class="btn btn-outline-secondary" type="button">Gérer mon profil</button>
+				<button class="btn btn-outline-info" type="button">Gérer mes adresses</button>
+			</div>
+            	
+{% endblock %}

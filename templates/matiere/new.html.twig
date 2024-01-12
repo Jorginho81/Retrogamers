@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer attribut{% endblock %}
+
+{% block body %}
+    <h1>Créer attribut</h1>
+
+    {{ include('matiere/_form.html.twig') }}
+
+    <a href="{{ path('app_matiere_index') }}">Retour</a>
+    
+{% endblock %}

@@ -1,0 +1,124 @@
+<nav class="navbar bg-body-white">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="{{ path('home') }}">
+			<img src="{{ asset('images/Retrogamers.png') }}" alt="Logo" width="60" height="54" class="d-inline-block align-text-top">
+			RETROGAMERS
+		</a>
+	</div>
+</nav>
+<nav class="navbar navbar-expand-lg bg-warning" id="navbar_top">
+	<div class="container-fluid2">
+		<a class="navbar-brand text-white" href="{{ path('home') }}"></a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+				<a class="nav-item" href="{{ path('home') }}">
+					<img src="{{ asset('images/Retrogamers.png') }}" alt="Logo" width="54" height="48" class="d-inline-block align-text-top">
+				</a>
+
+				<li class="nav-item">
+					<a class="nav-link text1" href="{{ path('catalogue') }}">Catalogue</a>
+				</li>
+
+
+				
+					{% if is_granted('ROLE_ADMIN') %}
+						{# connecté + ROLE_ADMIN #}
+
+						<li class="nav-item">
+							<a class="nav-link text1" href="{{ path('produit_afficher') }}">Gestion des produits</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link text1" href="{{ path('app_categorie_index') }}">Gestion des catégories</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link text1" href="{{ path('app_matiere_index') }}">Gestion des Attributs</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text1" href="{{ path('app_pages_admin_index') }}">Pages Adm</a>
+						</li>
+					{% endif %}
+					
+				{% if app.user %}
+					{# connecté #}
+
+					<li class="nav-item">
+						<a class="nav-link text1" href="{{ path('app_profil') }}">
+							<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-circle" viewbox="0 0 16 16">
+								<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+								<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.2264.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+							</svg>																																									
+							
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link text1" href="{{ path('cart_index') }}">
+							<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart" viewbox="0 0 16 16">
+								<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+							</svg>
+						</a>
+
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text2" href="{{ path('app_logout') }}">
+							<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-door-closed" viewbox="0 0 16 16">
+								<path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3zm1 13h8V2H4z"/>
+								<path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0"/>
+							</svg>
+						</a>
+					</li>
+
+				{% else %}
+					
+					{# non connecté #}
+
+					<li class="nav-item">
+						<a class="nav-link text2" href="{{ path('app_register') }}">Inscription</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link text2" href="{{ path('app_login') }}">Connexion</a>
+					</li>
+
+				{% endif %}
+
+
+			</ul>
+		</div>
+	</div>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener('scroll', function () {
+if (window.scrollY > 50) {
+document.getElementById('navbar_top').classList.add('fixed-top');
+// add padding top to show content behind navbar
+navbar_height = document.querySelector('.navbar').offsetHeight;
+document.body.style.paddingTop = navbar_height + 'px';
+} else {
+document.getElementById('navbar_top').classList.remove('fixed-top');
+// remove padding top from body
+document.body.style.paddingTop = '0';
+}
+});
+});
+	</script>
+
+</nav>
+
+{#
+                    La fonction twig path() permet de rediriger sur des liens internes.
+                    2 arguments :
+                        - 1e argument obligatoire (str) : nom de la route
+                        - 2e argument facultatif (array) : tableau des paramètres
+                            en php  : ['key' => 'value']
+                            en twig : {'key' : 'value'}
+
+                            key : nom du paramètre
+                            value: valeur du paramètre
+                #}

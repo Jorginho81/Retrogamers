@@ -1,0 +1,18 @@
+{# templates/cart/form.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire de Panier{% endblock %}
+
+{% block body %}
+    <h1>Formulaire de Panier</h1>
+
+    {{ dump(form) }} {# Ajoutez cette ligne pour afficher le contenu du formulaire dans le navigateur #}
+
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_row(form.adresse) }}
+    {{ form_row(form.produits) }}
+    {{ form_row(form.save) }}
+    {{ form_end(form) }}
+{% endblock %}

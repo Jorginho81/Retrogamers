@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier le profil{% endblock %}
+{% block h1 %}Modifier le profil{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        form {
+            width: 50%;
+            margin: 0 auto;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <a class="btn btn-primary" href="{{ path('app_categorie_index') }}">Retour</a>
+
+    {{ form_start(editProfilForm) }}
+    {{ form_row(editProfilForm.email) }}
+    {{ form_row(editProfilForm.nom) }}
+    {{ form_row(editProfilForm.prenom) }}
+    {{ form_row(editProfilForm.adresse) }}
+    
+    {# Ajoutez d'autres champs du formulaire de modification de profil #}
+
+    <button type="submit" class="btn btn-primary">Modifier</button>
+    {{ form_end(editProfilForm) }}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer attribut{% endblock %}
+
+{% block body %}
+    <h1>Editer attribut</h1>
+
+    {{ include('matiere/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_matiere_index') }}">Retour</a>
+
+    {{ include('matiere/_delete_form.html.twig') }}
+    
+{% endblock %}

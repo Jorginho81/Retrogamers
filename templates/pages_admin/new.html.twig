@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter Page{% endblock %}
+
+{% block body %}
+    <h1>Ajouter page</h1>
+
+    {{ include('pages_admin/_form.html.twig') }}
+
+    <a class="btn btn-primary" href="{{ path('app_pages_admin_index') }}">Retour</a>
+{% endblock %}
